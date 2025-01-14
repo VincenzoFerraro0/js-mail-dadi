@@ -9,13 +9,19 @@ Si può fare? Certo che si basta ragionare un po’.
 Nota:
 Non è necessario provvedere alla validazione delle email
 */
+
 /*
     MINI TASK
     -  Crea un array con le mail della lista degli invitati
     -  Chiedi all'utente di inserire la sua email con la funzione prompt
     -  Crea  una variabile per il controllo di accesso con valore booleano  false/o
     -  Utilizza un ciclo for per iterare attraverso l'array listaInvitati
-    -
+    -  Crea una condizione all'interno del ciclo che controlla se la mail dell'utente è presente nella listaInvitati = listaInvitati[i] === emailUtente
+    -  Se si verifica la variabile "accessoConcesso" passa da false a true
+    -  interrompi il ciclo
+    - Crea una condizione fuori dal ciclo che verifica la variabile accessoConcesso 
+        se è vera stampa: Accesso consentito! Benvenuto alla festa.
+            altrimenti stampa: Mi dispiace, non sei nella lista degli invitati.
 */
 
 // Lista delle email degli invitati
@@ -38,7 +44,7 @@ for (let i = 0; i < listaInvitati.length; i++) {
     // Se troviamo una corrispondenza
     if (listaInvitati[i] === emailUtente) {
         accessoConcesso = true;
-        break; // Esci dal ciclo, non è necessario continuare
+        break; // Esci dal ciclo 
     }
 };
 
@@ -48,18 +54,6 @@ if (accessoConcesso) {
 } else {
     alert("Mi dispiace, non sei nella lista degli invitati.");
 };
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /*
@@ -77,3 +71,29 @@ Consigli del giorno:
 5. proviamo ad immaginare le operazioni che vogliamo far svolgere al nostro programma così come lo faremmo "a mano"
 Buon lavoro e buon divertimento! :slightly_smiling_face
 */
+
+/*
+    MINI TASK
+    1. Generare un numero casuale da 1 a 6 per il giocatore e per il computer
+    Utilizziamo Math.random() per ottenere un numero casuale
+    
+    2. Confrontare i due numeri per determinare il vincitore
+    Se il numero del giocatore è maggiore, il giocatore vince
+    Se il numero del computer è maggiore, il computer vince
+    Se i numeri sono uguali, è un pareggio
+*/
+
+// Genera un numero casuale per il giocatore
+let numeroGiocatore = Math.floor(Math.random() * 6) + 1;
+
+// Genera un numero casuale per il computer
+let numeroComputer = Math.floor(Math.random() * 6) + 1;
+
+if (numeroGiocatore > numeroComputer) {
+    console.log(`Il giocatore ha vinto! Giocatore: ${numeroGiocatore}, Computer: ${numeroComputer}`);
+} else if (numeroGiocatore < numeroComputer) {
+    console.log(`Il computer ha vinto! Giocatore: ${numeroGiocatore}, Computer: ${numeroComputer}`);
+} else {
+    console.log(`Pareggio! Giocatore: ${numeroGiocatore}, Computer: ${numeroComputer}`);
+}
+
