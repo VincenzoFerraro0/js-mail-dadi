@@ -34,26 +34,25 @@ const listaInvitati = [
 ];
 
 // Chiediamo all'utente la sua email
-let emailUtente = prompt("Inserisci la tua email:");
+let emailUtente = prompt("Inserisci la tua email:", "paola@example.com");
 
 // Variabile di  verifica con valore 0
 let accessoConcesso = false;
 
 // Ciclo attraverso la lista di email
-for (let i = 0; i < listaInvitati.length; i++) {
+for (let i = 0; i < listaInvitati.length && !accessoConcesso; i++) { //i < 3 (true) && !accessoConcesso=(true)
     // Se troviamo una corrispondenza
-    if (listaInvitati[i] === emailUtente) {
-        accessoConcesso = true;
-        break; // Esci dal ciclo 
+    if (emailUtente ===  listaInvitati[i]) {
+        accessoConcesso = true
     }
-};
+}
 
 // Messaggio appropriato in base al risultato
 if (accessoConcesso) {
-    alert("Accesso consentito! Benvenuto alla festa.");
+    alert("Accesso consentito! Benvenuto alla festa.")
 } else {
-    alert("Mi dispiace, non sei nella lista degli invitati.");
-};
+    alert("Mi dispiace, non sei nella lista degli invitati.")
+}
 
 
 /*
@@ -88,6 +87,8 @@ let numeroGiocatore = Math.floor(Math.random() * 6) + 1;
 
 // Genera un numero casuale per il computer
 let numeroComputer = Math.floor(Math.random() * 6) + 1;
+
+console.log(numeroGiocatore, numeroComputer)
 
 if (numeroGiocatore > numeroComputer) {
     console.log(`Il giocatore ha vinto! Giocatore: ${numeroGiocatore}, Computer: ${numeroComputer}`);
